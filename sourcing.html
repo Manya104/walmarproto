@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sourcing Map – Walmart’s Ethical Supply Chain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f9f9, #e0f2f1);
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* NAVBAR */
+    nav {
+      background-color: #0071ce;
+      color: white;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .logo-img {
+      height: 40px;
+      flex-shrink: 0;
+    }
+    nav h1 {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    nav .nav-left {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      white-space: nowrap;
+      padding: 8px 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 6px;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #005bb5;
+      outline: none;
+    }
+    /* HEADER */
+    header {
+      background-color: #0071ce;
+      color: white;
+      padding: 40px 30px 45px;
+      text-align: center;
+      box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+    header p {
+      font-size: 1.3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 10%;
+      gap: 50px;
+      background: #e0f7fa;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .hero-text {
+      flex: 1 1 400px;
+      min-width: 300px;
+      max-width: 600px;
+      text-align: left;
+    }
+    .hero-text h2 {
+      color: #0071ce;
+      font-size: 2.6rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #004d71;
+    }
+    .hero-image {
+      flex: 1 1 400px;
+      min-width: 300px;
+      max-width: 600px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      animation: float 5s ease-in-out infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    /* CONTENT SECTIONS */
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 30px;
+    }
+    h3 {
+      color: #0071ce;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 6px solid #0071ce;
+      padding-left: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      color: #2a2a2a;
+      max-width: 900px;
+    }
+    /* CERTIFICATIONS FLASHCARDS */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .certifications img {
+      height: 90px;
+      filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15));
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border-radius: 12px;
+      background: white;
+      padding: 8px;
+      user-select: none;
+    }
+    .certifications img:hover,
+    .certifications img:focus {
+      transform: scale(1.15);
+      outline: none;
+    }
+    /* MAP CONTAINER */
+    .map-container {
+      margin-top: 40px;
+      position: relative;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .world-map {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+      user-select: none;
+      touch-action: none;
+    }
+    .tooltip {
+      position: fixed;
+      background: rgba(0, 113, 206, 0.9);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+    #map-instructions {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 600;
+    }
+    /* GAME SECTION */
+    .game-section {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 35px 25px 40px;
+      margin: 60px auto 80px;
+      max-width: 1100px;
+      text-align: center;
+    }
+    .game-section h3 {
+      margin-bottom: 35px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #0071ce;
+    }
+    .game-section p {
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #004d71;
+    }
+    .draggables {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+    .draggable-item {
+      width: 140px;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.2s ease;
+      background: #e0f7fa;
+      border-radius: 15px;
+      padding: 18px 12px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+      color: #0071ce;
+    }
+    .draggable-item:active, .draggable-item.dragging {
+      cursor: grabbing;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      outline: none;
+    }
+    .dropzones {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 60px;
+    }
+    .dropzone {
+      width: 180px;
+      height: 180px;
+      border: 3px dashed #0071ce;
+      border-radius: 20px;
+      position: relative;
+      padding-top: 120px;
+      font-weight: 700;
+      color: #0071ce;
+      user-select: none;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      text-align: center;
+      box-shadow: inset 0 0 5px #0071ce;
+    }
+    .dropzone.correct {
+      background-color: #4caf50cc;
+      border-color: #4caf50;
+      color: #004d00;
+      box-shadow: inset 0 0 12px #4caf50;
+    }
+    .dropzone.incorrect {
+      background-color: #f44336cc;
+      border-color: #f44336;
+      color: #670000;
+      box-shadow: inset 0 0 12px #f44336;
+    }
+    .dropzone-label {
+      position: absolute;
+      top: 14px;
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.3rem;
+      user-select: none;
+      color: inherit;
+    }
+    .scoreboard {
+      font-size: 1.4rem;
+      margin-top: 28px;
+      color: #0071ce;
+      font-weight: 700;
+    }
+    button.reset-btn {
+      background: #0071ce;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 38px;
+      transition: background 0.3s ease;
+      user-select: none;
+      font-weight: 700;
+      box-shadow: 0 5px 12px rgba(0, 113, 206, 0.7);
+    }
+    button.reset-btn:hover,
+    button.reset-btn:focus {
+      background: #005bb5;
+      outline: none;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 8%;
+      }
+      nav ul {
+        justify-content: center;
+      }
+      .dropzones {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+      }
+      .dropzone {
+        width: 70vw;
+        max-width: 300px;
+        height: 160px;
+        padding-top: 100px;
+      }
+      .draggables {
+        gap: 25px;
+      }
+      .draggable-item {
+        width: 70vw;
+        max-width: 300px;
+      }
+      section {
+        padding: 0 15px;
+      }
+    }
+    @media (max-width: 400px) {
+      nav h1 {
+        font-size: 1.2rem;
+      }
+      nav ul li a {
+        font-size: 0.95rem;
+        padding: 6px 4px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .hero-text h2 {
+        font-size: 1.9rem;
+      }
+      .hero-text p {
+        font-size: 1rem;
+      }
+      .game-section h3 {
+        font-size: 1.5rem;
+      }
+      .game-section p {
+        font-size: 1rem;
+      }
+    }
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.9rem;
+      color: #555;
+      background: #f9f9f9;
+      margin-top: auto;
+      user-select: none;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="assests/logo.png" alt="Walmart Logo" class="logo-img" />
+      <h1>GreenCart</h1>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hive.html">Walmart Hive</a></li>
+      <li><a href="impact.html">Impact Arena</a></li>
+      <li><a href="sourcing.html">Sourcing Map</a></li>
+      <li><a href="rewards.html">EcoRewards</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Retail with Purpose</h1>
+    <p>Building a Sustainable and Responsible Future with Walmart. Join us in reshaping retail with innovation, collaboration, and environmental commitment.</p>
+  </header>
+
+  <section class="hero" aria-label="Sourcing hero">
+    <div class="hero-text">
+      <h2>Ethical Sourcing, Transparent Supply Chains</h2>
+      <p>At Walmart, our commitment to sustainability extends beyond the shelves. We work with trusted suppliers worldwide, ensuring ethical practices, fair labor, and minimal environmental impact. Together, we're building a supply chain that values people and the planet.</p>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80"
+        alt="Global supply chain illustration"
+      />
+    </div>
+  </section>
+
+  <section aria-labelledby="ethical-sourcing">
+    <h3 id="ethical-sourcing">Ethical Sourcing Overview</h3>
+    <p>Walmart’s sourcing model ensures compliance with environmental standards, social responsibility, and continuous improvement across suppliers. Our Supplier Code of Conduct promotes fair wages, safe working conditions, and environmental stewardship.</p>
+  </section>
+
+  <section aria-labelledby="transparency">
+    <h3 id="transparency">Supply Chain Transparency</h3>
+    <p>We embrace technology and data-driven insights to track product origins, reduce waste, and optimize logistics. Our blockchain initiatives increase visibility, helping customers make informed, sustainable choices.</p>
+  </section>
+
+  <section aria-labelledby="certifications">
+    <h3 id="certifications">Collaborations & Certifications</h3>
+    <div class="certifications" role="list" aria-label="Certification logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Global_GAP_Logo.svg/256px-Global_GAP_Logo.svg.png" alt="Fairtrade Certification" role="listitem" tabindex="0" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Global_GAP_Logo.svg/256px-Global_GAP_Logo.svg.png" alt="Forest Stewardship Council Logo" role="listitem" tabindex="0" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Global_GAP_Logo.svg/256px-Global_GAP_Logo.svg.png" alt="Global GAP Certification" role="listitem" tabindex="0" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/LEED_logo.svg/256px-LEED_logo.svg.png" alt="LEED Certification" role="listitem" tabindex="0" />
+    </div>
+  </section>
+
+  <section aria-labelledby="map-section">
+    <h3 id="map-section">Global Sourcing Locations</h3>
+    <div class="map-container" aria-label="World map showing Walmart sourcing regions" role="img" tabindex="0" style="position: relative;">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1024px-World_map_-_low_resolution.svg.png"
+        alt="World map"
+        class="world-map"
+        aria-describedby="map-instructions"
+        draggable="false"
+      />
+      <div id="tooltip" class="tooltip" aria-hidden="true"></div>
+    </div>
+    <p id="map-instructions">Hover over the map to see key sourcing regions.</p>
+  </section>
+
+  <section class="game-section" aria-labelledby="game-title">
+    <h3 id="game-title">Supply Chain Match Game</h3>
+    <p>Drag and drop the products to their correct sourcing countries to learn more about Walmart’s sustainable sourcing.</p>
+
+    <div class="draggables" role="list" aria-label="Products to drag">
+      <div class="draggable-item" draggable="true" data-product="coffee" tabindex="0" role="listitem" aria-grabbed="false">☕ Coffee</div>
+      <div class="draggable-item" draggable="true" data-product="cotton" tabindex="0" role="listitem" aria-grabbed="false">👕 Cotton</div>
+      <div class="draggable-item" draggable="true" data-product="electronics" tabindex="0" role="listitem" aria-grabbed="false">💻 Electronics</div>
+    </div>
+
+    <div class="dropzones" role="list" aria-label="Countries to drop products into">
+      <div class="dropzone" data-region="brazil" tabindex="0" role="listitem" aria-dropeffect="none">
+        <div class="dropzone-label">🇧🇷 Brazil</div>
+      </div>
+      <div class="dropzone" data-region="india" tabindex="0" role="listitem" aria-dropeffect="none">
+        <div class="dropzone-label">🇮🇳 India</div>
+      </div>
+      <div class="dropzone" data-region="china" tabindex="0" role="listitem" aria-dropeffect="none">
+        <div class="dropzone-label">🇨🇳 China</div>
+      </div>
+    </div>
+
+    <div class="scoreboard" aria-live="polite" aria-atomic="true" aria-relevant="text">Score: 0 / 3</div>
+    <button class="reset-btn" aria-label="Reset game">Reset Game</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Walmart Inc. All rights reserved.
+  </footer>
+
+  <script>
+    // Tooltip on map
+    const tooltip = document.getElementById('tooltip');
+    const mapImage = document.querySelector('.world-map');
+
+    // Approximate region coordinates in % relative to image size
+    const regions = [
+      { name: 'USA', left: 33, top: 38 },
+      { name: 'Mexico', left: 31, top: 47 },
+      { name: 'China', left: 78, top: 38 },
+      { name: 'India', left: 70, top: 49 },
+      { name: 'Brazil', left: 38, top: 66 },
+      { name: 'South Africa', left: 52, top: 83 }
+    ];
+
+    mapImage.addEventListener('mousemove', e => {
+      const rect = mapImage.getBoundingClientRect();
+      const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+      const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
+
+      // Find if mouse is near any region (within 5% radius)
+      const region = regions.find(r =>
+        Math.abs(xPercent - r.left) < 5 &&
+        Math.abs(yPercent - r.top) < 5
+      );
+
+      if (region) {
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+        const pageWidth = window.innerWidth;
+        const pageHeight = window.innerHeight;
+
+        let left = e.clientX + 15;
+        let top = e.clientY + 15;
+
+        // Keep tooltip inside viewport
+        if (left + tooltipWidth > pageWidth) {
+          left = e.clientX - tooltipWidth - 15;
+        }
+        if (top + tooltipHeight > pageHeight) {
+          top = e.clientY - tooltipHeight - 15;
+        }
+
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+        tooltip.textContent = region.name;
+        tooltip.style.opacity = '1';
+        tooltip.setAttribute('aria-hidden', 'false');
+      } else {
+        tooltip.style.opacity = '0';
+        tooltip.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    mapImage.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = '0';
+      tooltip.setAttribute('aria-hidden', 'true');
+    });
+
+    // Drag and Drop Game Logic
+    const draggables = document.querySelectorAll('.draggable-item');
+    const dropzones = document.querySelectorAll('.dropzone');
+    const scoreboard = document.querySelector('.scoreboard');
+    const resetBtn = document.querySelector('.reset-btn');
+
+    // Map products to correct dropzones
+    const correctMap = {
+      coffee: 'brazil',
+      cotton: 'india',
+      electronics: 'china'
+    };
+
+    let score = 0;
+
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('text/plain', e.target.dataset.product);
+        e.target.classList.add('dragging');
+        e.target.setAttribute('aria-grabbed', 'true');
+      });
+      draggable.addEventListener('dragend', e => {
+        e.target.classList.remove('dragging');
+        e.target.setAttribute('aria-grabbed', 'false');
+      });
+      // Support keyboard dragging for accessibility
+      draggable.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          alert('Use mouse drag to move this item. Keyboard dragging not implemented.');
+        }
+      });
+    });
+
+    dropzones.forEach(zone => {
+      zone.addEventListener('dragover', e => {
+        e.preventDefault();
+        zone.style.backgroundColor = '#b3e5fc';
+        zone.setAttribute('aria-dropeffect', 'move');
+      });
+      zone.addEventListener('dragleave', e => {
+        zone.style.backgroundColor = '';
+        zone.setAttribute('aria-dropeffect', 'none');
+      });
+      zone.addEventListener('drop', e => {
+        e.preventDefault();
+        zone.style.backgroundColor = '';
+        zone.setAttribute('aria-dropeffect', 'none');
+
+        const product = e.dataTransfer.getData('text/plain');
+        const region = zone.dataset.region;
+
+        if (correctMap[product] === region) {
+          zone.classList.add('correct');
+          zone.classList.remove('incorrect');
+          if (!zone.dataset.filled) {
+            score++;
+            scoreboard.textContent = `Score: ${score} / 3`;
+            zone.dataset.filled = product;
+            // Disable draggable item
+            const draggedItem = document.querySelector(`.draggable-item[data-product="${product}"]`);
+            draggedItem.setAttribute('draggable', 'false');
+            draggedItem.style.opacity = '0.4';
+            draggedItem.style.cursor = 'default';
+            draggedItem.setAttribute('aria-disabled', 'true');
+          }
+        } else {
+          zone.classList.add('incorrect');
+          zone.classList.remove('correct');
+          setTimeout(() => {
+            zone.classList.remove('incorrect');
+          }, 1200);
+        }
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      score = 0;
+      scoreboard.textContent = `Score: 0 / 3`;
+      dropzones.forEach(zone => {
+        zone.classList.remove('correct', 'incorrect');
+        delete zone.dataset.filled;
+      });
+      draggables.forEach(item => {
+        item.setAttribute('draggable', 'true');
+        item.style.opacity = '1';
+        item.style.cursor = 'grab';
+        item.setAttribute('aria-disabled', 'false');
+      });
+    });
+  </script>
+</body>
+</html>

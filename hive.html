@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walmart Hive – GreenCart Social Shopping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0fff0, #e0f7fa);
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    nav {
+      background: #0071ce;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .logo-img {
+      height: 45px;
+    }
+    nav h1 {
+      color: white;
+      font-size: 1.8em;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin-left: auto;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header {
+      background: #0071ce;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.3em;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+    }
+    .hero-text {
+      flex: 1;
+      padding-right: 30px;
+      min-width: 300px;
+    }
+    .hero-text h2 {
+      font-size: 2.5em;
+      color: #0071ce;
+    }
+    .hero-text p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      animation: float 4s infinite ease-in-out;
+      min-width: 300px;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .dashboard-embed {
+      width: 90%;
+      max-width: 1000px;
+      height: 720px;
+      margin: 60px auto;
+      display: block;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h3 {
+      color: #0071ce;
+      margin-top: 0;
+    }
+    .interactive {
+      background: linear-gradient(to bottom right, #ffffff, #ccf2f4);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .interactive h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .budget-calculator {
+      margin-top: 20px;
+      display: inline-block;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0071ce;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background: #0071ce;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="assests/logo.png" alt="Walmart Logo" class="logo-img">
+    <h1>GreenCart</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hive.html">Walmart Hive</a></li>
+      <li><a href="impact.html">Impact Arena</a></li>
+      <li><a href="sourcing.html">Sourcing Map</a></li>
+      <li><a href="rewards.html">EcoRewards</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Retail with Purpose</h1>
+    <p>Building a Sustainable and Responsible Future with Walmart. Join us in reshaping retail with innovation, collaboration, and environmental commitment.</p>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>And we did it.</h2>
+      <p>Walmart Hive is our vision for collaborative, social, and sustainable commerce. Real‑time group shopping with AI‑powered eco suggestions and budget tools.</p>
+    </div>
+    <div class="hero-image">
+      <img src="assests/hive.png" alt="Hive 3D" />
+    </div>
+  </section>
+
+  <iframe src="https://splitapp-rnjo.onrender.com/dashboard/app"
+    class="dashboard-embed"
+    title="Hive Collaborative Dashboard">
+  </iframe>
+
+  <section class="features">
+    <div class="card"><h3>Shared Cart</h3><p>Everyone can add items to a common cart, synced live.</p></div>
+    <div class="card"><h3>Split Payments</h3><p>Smart tool splits the bill fairly.</p></div>
+    <div class="card"><h3>Live Chat</h3><p>Stay connected while shopping together.</p></div>
+    <div class="card"><h3>Eco Choice Alerts</h3><p>AI suggests greener alternatives inline.</p></div>
+    <div class="card"><h3>Group Budgeting</h3><p>Track shared budget progress and alerts.</p></div>
+    <div class="card"><h3>Green Rewards</h3><p>Earn eco-points for group sustainable actions.</p></div>
+  </section>
+
+  <section class="interactive">
+    <h2>Try Hive Budget Calculator</h2>
+    <div class="budget-calculator">
+      <label>Total Budget ($): <input type="number" id="budget" placeholder="100" /></label><br />
+      <label>People: <input type="number" id="people" placeholder="2" /></label><br />
+      <button onclick="splitBudget()">Split</button>
+      <p id="result"></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Walmart Future Commerce. All rights reserved.
+  </footer>
+
+  <script>
+    function splitBudget() {
+      const b = parseFloat(document.getElementById('budget').value);
+      const p = parseInt(document.getElementById('people').value);
+      document.getElementById('result').textContent =
+        (b && p>0) ? `Each person pays: $${(b/p).toFixed(2)}` : 'Please enter valid numbers.';
+    }
+  </script>
+</body>
+</html>

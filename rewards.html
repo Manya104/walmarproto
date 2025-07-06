@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoRewards – Walmart Green Points Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f0fff0);
+      color: #1a1a1a;
+    }
+    nav {
+      background-color: #0071ce;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-img {
+      height: 40px;
+    }
+    nav h1 {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header {
+      background-color: #0071ce;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1.2em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #0071ce;
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-left: 6px solid #0071ce;
+      padding-left: 12px;
+    }
+    .progress-container {
+      background: #d0f0f0;
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+    .progress-bar {
+      background: #0071ce;
+      height: 30px;
+      border-radius: 20px;
+      width: 0;
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      line-height: 30px;
+      transition: width 1.5s ease-in-out;
+      user-select: none;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .badge {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      position: relative;
+    }
+    .badge.locked {
+      filter: grayscale(100%);
+      opacity: 0.5;
+      cursor: default;
+    }
+    .badge:hover:not(.locked) {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0, 113, 206, 0.4);
+    }
+    .badge img {
+      width: 80px;
+      margin-bottom: 10px;
+      user-select: none;
+      pointer-events: none;
+    }
+    .badge h3 {
+      font-size: 1.1em;
+      margin: 0;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .badge .tooltip {
+      position: absolute;
+      bottom: 100%;
+      background: #0071ce;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      left: 50%;
+      transform-origin: bottom center;
+      transform: translateX(-50%) translateY(10px);
+      z-index: 10;
+    }
+    .badge:hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .tips {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .tips button {
+      background: #0071ce;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.3s ease;
+    }
+    .tips button:hover {
+      background: #005bb5;
+    }
+    .tips p {
+      max-width: 700px;
+      margin: 20px auto 0 auto;
+      font-size: 1.1em;
+      color: #004a7f;
+    }
+    footer {
+      background-color: #0071ce;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="assests/logo.png" alt="Walmart Logo" class="logo-img" />
+    <h1>GreenCart</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hive.html">Walmart Hive</a></li>
+      <li><a href="impact.html">Impact Arena</a></li>
+      <li><a href="sourcing.html">Sourcing Map</a></li>
+      <li><a href="rewards.html">EcoRewards</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>EcoRewards</h1>
+    <p>Earn points for sustainable choices and make a lasting positive impact with Walmart’s Green Points Program.</p>
+  </header>
+
+  <section aria-label="EcoRewards progress tracker">
+    <h2>Your Green Points Progress</h2>
+    <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" aria-label="Green points progress bar">
+      <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+  </section>
+
+  <section aria-label="EcoRewards badges">
+    <h2>Achievements & Badges</h2>
+    <div class="badges">
+      <div class="badge" tabindex="0" data-tooltip="Awarded for purchasing 100% recycled products.">
+        <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Recycled Products Badge" />
+        <h3>Recycle Champ</h3>
+        <div class="tooltip">Awarded for purchasing 100% recycled products.</div>
+      </div>
+      <div class="badge locked" tabindex="0" data-tooltip="Earned by reducing your carbon footprint by 20%.">
+        <img src="https://cdn-icons-png.flaticon.com/512/4270/4270465.png" alt="Carbon Footprint Reducer Badge" />
+        <h3>Carbon Cutter</h3>
+        <div class="tooltip">Earned by reducing your carbon footprint by 20%.</div>
+      </div>
+      <div class="badge locked" tabindex="0" data-tooltip="Unlocked by joining 5 group eco shopping events.">
+        <img src="https://cdn-icons-png.flaticon.com/512/4265/4265597.png" alt="Group Shopper Badge" />
+        <h3>Eco Socializer</h3>
+        <div class="tooltip">Unlocked by joining 5 group eco shopping events.</div>
+      </div>
+      <div class="badge" tabindex="0" data-tooltip="Completed 10 eco-friendly product swaps.">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921827.png" alt="Eco Swapper Badge" />
+        <h3>Eco Swapper</h3>
+        <div class="tooltip">Completed 10 eco-friendly product swaps.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tips" aria-label="Tips to earn more points">
+    <h2>Tips to Earn More Points</h2>
+    <button onclick="showTip('Switch to reusable bags for all your Walmart shopping trips.')">Reusable Bags</button>
+    <button onclick="showTip('Choose products with eco-friendly packaging.')">Eco Packaging</button>
+    <button onclick="showTip('Participate in Walmart’s group shopping events.')">Group Shopping</button>
+    <button onclick="showTip('Opt for locally sourced and organic products.')">Local & Organic</button>
+    <p id="tipText" aria-live="polite" style="margin-top: 20px; font-weight: 600;"></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Walmart Future Commerce. All rights reserved.
+  </footer>
+
+  <script>
+    // Animate progress bar on page load
+    const progressBar = document.getElementById('progressBar');
+    let progress = 0;
+    const targetProgress = 65; // Example: 65% progress
+
+    function animateProgress() {
+      if (progress < targetProgress) {
+        progress++;
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+        setTimeout(animateProgress, 20);
+      }
+    }
+    animateProgress();
+
+    // Show tip on button click
+    function showTip(tip) {
+      const tipText = document.getElementById('tipText');
+      tipText.textContent = tip;
+    }
+  </script>
+</body>
+</html>

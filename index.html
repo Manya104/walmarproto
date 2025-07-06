@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenCart – Walmart's Sustainable Future</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0071ce;
+      --secondary-color: #e0f7fa;
+      --accent-color: #f0fff0;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    nav {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-img {
+      height: 45px;
+    }
+    nav h1 {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #dff9fb;
+    }
+    header {
+      background: url('assests/heading.png') no-repeat center center/contain;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 3.5em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.3em;
+      max-width: 800px;
+      margin: 20px auto;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #f9fdfd;
+    }
+    .section h2 {
+      font-size: 2.7em;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: var(--primary-color);
+      font-size: 1.4em;
+    }
+    .card p {
+      font-size: 1em;
+      margin: 10px 0;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+    .lottie-section {
+      background: linear-gradient(to top right, #ffffff, #e1f4f3);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .lottie-section h2 {
+      font-size: 2.5em;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .lottie-section p {
+      max-width: 600px;
+      margin: 25px auto 0;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 25px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="assests/logo.png" alt="Walmart Logo" class="logo-img"> 
+
+
+    <h1 align ="right"> GreenCart</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hive.html">Walmart Hive</a></li>
+      <li><a href="impact.html">Impact Arena</a></li>
+      <li><a href="sourcing.html">Sourcing Map</a></li>
+      <li><a href="rewards.html">EcoRewards</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Retail with Purpose</h1>
+    <p>Building a Sustainable and Responsible Future with Walmart. Join us in reshaping retail with innovation, collaboration, and environmental commitment.</p>
+  </header>
+
+  <section class="section">
+    <h2>Explore Our Initiatives</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Walmart Hive</h3>
+        <p>Collaborative shopping with shared carts, budgeting tools, and sustainability suggestions.</p>
+        <a href="hive.html">Visit Hive →</a>
+      </div>
+      <div class="card">
+        <h3>Impact Arena</h3>
+        <p>Track Walmart's carbon footprint reduction, water savings, and waste diversion goals in real time.</p>
+        <a href="impact.html">View Dashboard →</a>
+      </div>
+      <div class="card">
+        <h3>Sourcing Map</h3>
+        <p>Discover where Walmart ethically sources products and supports local communities.</p>
+        <a href="sourcing.html">Explore Sourcing →</a>
+      </div>
+      <div class="card">
+        <h3>EcoRewards</h3>
+        <p>Earn green points and rewards for making environmentally conscious shopping decisions.</p>
+        <a href="rewards.html">Earn Rewards →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lottie-section">
+    <h2>Walmart for the Planet</h2>
+    <iframe src="assests/planet.png"></iframe>
+    <p>Walmart is committed to reducing carbon emissions, supporting renewable energy, and creating a circular economy to protect our environment for future generations.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Walmart Future Commerce. All rights reserved.
+  </footer>
+</body>
+</html>
